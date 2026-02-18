@@ -35,16 +35,18 @@ A full-stack real-time bookmark manager built with Next.js (App Router) and Supa
 🚧 Problems Faced & Solutions
 1) Session was not not updating properly in multiple tabs mean when a user log in/out the another tab does not update correctly.
 solution:Use of supabase.auth.OnAuthStateChange() to sync session in all tab.
-2) Insert/Delete/Update not working in Real Time
+
+3) Insert/Delete/Update not working in Real Time
 solution:Enable Real Time Toggle in Table Setting.
-3) when a user A is logged in tab 1 it automatically logged in tab 2 also and show the same data but as user A logged out from tab 1 then it logged out in tab 2 also which is fine but when user B is logged in it logged in both the tab but data in tab 2 is not accurate it showing data of user A? 
+
+5) when a user A is logged in tab 1 it automatically logged in tab 2 also and show the same data but as user A logged out from tab 1 then it logged out in tab 2 also which is fine but when user B is logged in it logged in both the tab but data in tab 2 is not accurate it showing data of user A? 
 solution: while log out we have to update the state and store [] array so that it refetched bookmarks as auth state change.
 
 📦 Setup Instructions:
 git clone https://github.com/yourusername/smart-bookmark-app.git
-cd smart-bookmark-app
-npm install
-npm run dev
+1. cd smart-bookmark-app
+2. npm install
+3. npm run dev
 
 Add .env:
 NEXT_PUBLIC_SUPABASE_URL=your_url
