@@ -109,6 +109,7 @@ export default function Home() {
 
   setTitle("")
   setUrl("")
+  fetchBookmarks(session.user.id)
 }
 
   const deleteBookmark = async (id: string) => {
