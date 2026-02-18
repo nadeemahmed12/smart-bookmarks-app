@@ -43,7 +43,7 @@ solution:Enable Real Time Toggle in Table Setting.
 solution: while log out we have to update the state and store [] array so that it refetched bookmarks as auth state change.
 
 📦 Setup Instructions:
-git clone https://github.com/yourusername/smart-bookmark-app.git
+git clone https://github.com/nadeemahmed12/smart-bookmarks-app.git
 1. cd smart-bookmark-app
 2. npm install
 3. npm run dev
