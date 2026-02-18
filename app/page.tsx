@@ -82,9 +82,18 @@ export default function Home() {
 
 
   const addBookmark = async () => {
-    if (!title || !url) return
+  if (!title || !url) return
 
-    await supabase.from("bookmarks").insert([
+  const { data: { session } } = await supabase.auth.getSession()
+
+  if (!session?.user?.id) {
+    alert("Session not ready. Please try again.")
+    return
+  }
+
+  const { error } = await supabase
+    .from("bookmarks")
+    .insert([
       {
         title,
         url,
@@ -92,10 +101,15 @@ export default function Home() {
       },
     ])
 
-    setTitle("")
-    setUrl("")
-    fetchBookmarks(session.user.id)
+  if (error) {
+    console.error("Insert error:", error)
+    alert(error.message)
+    return
   }
+
+  setTitle("")
+  setUrl("")
+}
 
   const deleteBookmark = async (id: string) => {
     await supabase.from("bookmarks").delete().eq("id", id)
