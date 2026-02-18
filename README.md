@@ -49,5 +49,5 @@ git clone https://github.com/yourusername/smart-bookmark-app.git
 3. npm run dev
 
 Add .env:
-NEXT_PUBLIC_SUPABASE_URL=your_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
+1. NEXT_PUBLIC_SUPABASE_URL=your_url
+2. NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
